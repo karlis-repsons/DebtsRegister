@@ -1,0 +1,7 @@
+﻿{
+  "Tables": {
+    "MainDB": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=DebtsRegister_t3;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+﻿Initialize DB:
+   PM> Add-Migration Initial -Context TablesDbContext -OutputDir Core/impl/impl/db/tables/TableMigrations
+   PM> Update-Database -Context TablesDbContext
+
+Code-First: Update DB after changing model:
+   PM> Add-Migration next -Context TablesDbContext
+   PM> Update-Database -Context TablesDbContext

@@ -1,0 +1,12 @@
+﻿{
+  "Documents": {
+    "MainDB": {
+      "Name": "DebtsRegister",
+      "Collections": {
+        "Achievers": {
+          "Name": "Achievers"
+        }
+      }
+    }
+  }
+}

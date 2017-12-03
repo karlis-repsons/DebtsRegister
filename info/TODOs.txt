@@ -1,0 +1,27 @@
+﻿* Async API of Core.
+
+* Implement concurrency control - either using shared serializer or optimistic concurrency control.
+
+* Add more tests:
+	+ random debt deals test - make random deals and check person totals, statistics and achievers querying tables DB and comparing with test variables.
+	+ value preservation test - keep count of available value of each person; initially give each person equal total value; make random credits by those, who have any available value left; measure how much value is lost/added in total for all people.
+* Consider the best feasible way to move DebtsRegister.Tests under DebtsRegister (preferably splitting Core tests from e.g. WebAPI tests etc.).
+
+* Improve DI:
+	+ How to make sure that person who makes DI changes treats registers as they expect (e.g. so that all registers process DebtDealReceived event)?
+	+ Consider passing delegate to registers, which can always provide valid dbContext, even when register is a singleton.
+	+ Consider the right DI technology and initialization code.
+	  Related:
+		+ consider extension with an analyzer, which runs in parallel with WebAPI and uses Core. For example, self-cleanup: delete those debt deals, where paybacks match credit deal.
+
+* Decide about trust boundaries and validation:
+	+ where do I validate e.g.:
+		+ if debt deal parties exist in people table,
+		+ if same person has debt deal with itself,
+	+ and other validation cases?
+
+* Consider test dependencies, which allow to show first the root cause of failures.
+
+* Consider configuration file changes while register runs.
+
+* Implement lazy-loading of sub-registers.
